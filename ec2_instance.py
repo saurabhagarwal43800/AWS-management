@@ -50,16 +50,16 @@ def welcome():
 
 def main():
 	welcome()
-	my_region=input("Enter your region name")
+	my_region=input("Enter your region name: ")
 	print("please wait.....connecting to your aws ec2 console.....")
 	ec2_con_re=get_ec2_con_for_give_region(my_region)
 	print("please wait listing all instances ids in your region {}".format(my_region))
 	list_instances_on_my_region(ec2_con_re)
-	in_id=input("Now choose your instance id to start or stop:")
-	start_stop=input("Enter either stop or start command for your ec2 instance:")
+	in_id=input("Now choose your instance id to start or stop: ")
+	start_stop=input("Enter either stop or start command for your ec2 instance: ")
 	while True:
 		if start_stop not in ["start","stop"]:
-			start_stop=input("Enter only start or stop commands:")
+			start_stop=input("Enter only start or stop commands: ")
 			continue
 		else:
 			break
